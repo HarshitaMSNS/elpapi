@@ -29,7 +29,8 @@ public class CreateBookingTest {
         Assert.assertEquals(response.jsonPath().getString("booking.lastname"),"Varma");
         Assert.assertEquals(response.jsonPath().getInt("booking.totalprice"),120);
         Assert.assertEquals(response.jsonPath().getBoolean("booking.depositpaid"),true);
-//        Assert.assertEquals(response.jsonPath().getJsonObject("booking.bookingdates"),bookingDatesJSonBody);
+        Assert.assertEquals(response.jsonPath().getString("booking.bookingdates.checkin"),"2018-01-01");
+        Assert.assertEquals(response.jsonPath().getString("booking.bookingdates.checkout"),"2019-01-01");
         Assert.assertEquals(response.jsonPath().getString("booking.additionalneeds"),"Lunch");
     }
 }
